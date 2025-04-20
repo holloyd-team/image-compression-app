@@ -16,7 +16,7 @@ A simple web-based tool for compressing images and seeing the compression ratio.
 
 1. Clone this repository:
 ```
-git clone https://github.com/yourusername/image-compression-app.git
+git clone https://github.com/holloyd-team/image-compression-app.git
 cd image-compression-app
 ```
 
@@ -34,7 +34,7 @@ python run.py
 
 ### With HomeTools
 
-This app can be installed and run directly from [HomeTools](https://github.com/yourusername/HomeTools).
+This app can be installed and run directly from [HomeTools](https://github.com/holloyd-team/HomeTools).
 
 ## Requirements
 
