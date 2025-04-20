@@ -1,0 +1,7 @@
+{
+    "name": "image-compression-app",
+    "display_name": "Image Compression",
+    "description": "Compress image files and see compression ratio",
+    "version": "1.0.0",
+    "icon": "static/img/app-icon.svg"
+} 

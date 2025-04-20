@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compression Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/app-icon.svg') }}" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Compression Tool</h1>
+            <p>Compress your images and see the compression ratio</p>
+        </header>
+        
+        <main>
+            <section class="upload-section">
+                <div class="upload-container" id="drop-area">
+                    <div class="upload-instruction">
+                        <img src="{{ url_for('static', filename='img/upload-icon.svg') }}" alt="Upload" class="upload-icon">
+                        <p>Drag and drop an image here, or</p>
+                        <label for="file-input" class="upload-btn">Browse Files</label>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <div class="supported-formats">
+                            <p><strong>Supported formats:</strong> JPEG, PNG, GIF, WEBP, BMP, TIFF</p>
+                        </div>
+                    </div>
+                    <div class="preview-container" id="preview-container" hidden>
+                        <img id="preview-image" src="" alt="Preview">
+                        <button id="clear-btn">Clear</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="settings-section">
+                <h2>Compression Settings</h2>
+                <div class="compression-options">
+                    <div class="slider-container">
+                        <label for="quality">Compression Quality:</label>
+                        <input type="range" id="quality" name="quality" min="1" max="100" value="60">
+                        <span id="quality-value">60%</span>
+                        <div class="slider-hint">Lower quality = smaller file size</div>
+                    </div>
+                </div>
+                
+                <button id="compress-btn" class="action-btn" disabled>Compress Image</button>
+            </section>
+            
+            <section class="results-section" id="results-section" hidden>
+                <h2>Compression Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Original Size</h3>
+                        <p id="original-size">-</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Compressed Size</h3>
+                        <p id="compressed-size">-</p>
+                    </div>
+                    <div class="result-card highlight">
+                        <h3>Compression Ratio</h3>
+                        <p id="compression-ratio">-</p>
+                    </div>
+                </div>
+                
+                <div class="download-container">
+                    <button id="download-btn" class="action-btn">Download Compressed Image</button>
+                </div>
+            </section>
+        </main>
+        
+        <div id="loading-overlay" hidden>
+            <div class="spinner"></div>
+            <p>Compressing image...</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 
